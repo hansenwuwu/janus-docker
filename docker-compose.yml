@@ -1,0 +1,21 @@
+services:
+  janus:
+    image: canyan/janus-gateway:latest
+    container_name: janus-gateway
+    ports:
+      - "8188:8188"
+      - "8189:8189"
+      - "8088:8088"
+      - "8089:8089"
+      - "8889:8889"
+      - "8000:8000"
+      - "7088:7088"
+      - "7089:7089"
+      - "7889:7889"
+      - "7188:7188"
+      - "7777:7777"
+      - "7988:7988"
+      - "20000-20200:20000-20200/udp"
+    volumes:
+      - ./config/janus.jcfg:/usr/local/etc/janus/janus.jcfg
+    restart: unless-stopped
